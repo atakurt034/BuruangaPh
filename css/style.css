@@ -1,0 +1,535 @@
+:root {
+    --primary-color: rgba(39, 38, 38, 0.863);
+    --background-color: rgb(73, 73, 73, 1);
+
+}
+* {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    touch-action: auto;
+}
+.welcome {
+    background: url(../Images/HomeBackground.jpg) no-repeat bottom center/cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    animation: wlcmslide 20s linear infinite 0s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes wlcmslide {
+    20% {background: url(../Images/HomeBackground.jpg) no-repeat bottom center/cover;}
+    40% {background: url(../Images/186741-Ariels-Point.jpg) no-repeat bottom center/cover;}
+    55% {background: url(../Images/186741-Ariels-Point.jpg) no-repeat bottom center/cover;}
+    70% {background: url(../Images/hinugtan.jpg) no-repeat bottom center/cover;}
+    90% {background: url(../Images/hinugtan.jpg) no-repeat bottom center/cover;}
+}
+.welcomePage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+}
+.buruangaWrd {grid-area: h1;}
+.buruangaDef1 {grid-area: h2;}
+.explore {grid-area: explore;}
+.bWord{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.buruangaWrd {
+    color: #ffffff;
+    position: relative;
+    font-size: 3rem;
+    cursor: pointer;
+}
+.buruangaWrd:hover {
+    color: tomato;
+    cursor: help;
+}
+.buruangaDef2Cont {
+    top: 0;
+    width: 95%;
+    height: auto;
+    position: absolute;
+    background: var(--background-color);
+    padding: 3rem;
+    line-height: 1.5rem;
+}
+.buruangaDef2 {
+    color: #ffffff;
+    text-align: justify;
+}
+.close {
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 35px;
+    top: 10px;
+    right: 10px;
+    position: fixed;
+    border: 1px solid #000;
+    border-radius: 10%;
+}
+.buruangaDef1 {
+
+    margin-top: 5vh;
+    position: relative;
+    width: 80%;
+    color: #ffffff;
+    text-align: center;
+}
+.explore {
+    position: relative;
+    color: #f1f1f1;
+    text-decoration: none;
+    background: none;
+    border: #ffffff solid 3px;
+    font-size: 1rem;
+    padding: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 10;
+    font-weight: 900;
+
+}
+.explore:hover {
+    background: #000;
+    /* border: #ffffff solid 5px; */
+}
+.button {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    /* margin: 45vh 0 0 0; */
+    bottom: 10vh
+}
+/* Main Page */
+.mainPage {
+    width: 100%;
+    position: fixed;
+}
+.mainGrid {
+    background: url(../Images/20200816-Wallpaper-2.jpg) no-repeat center/cover;
+    overflow: auto;
+    display: grid;
+    width: 100vw;
+    overflow-x: hidden;
+    position: fixed;
+    justify-content: center;
+    height: 100%;
+    grid:   [row1start] "logo   logo    logo"       auto    [row1end]
+            [row2start] "nav    nav     nav"        auto    [row2end]
+            [row3start] "pages  pages   pages"      1fr     [row3end]
+            [row3start] "footer  footer   footer"   auto    [row3end]
+            /           auto    auto    auto
+}
+.logoCont {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    grid-area:logo;
+    width: 100%;
+    /* background:rgb(15, 37, 9); */
+    background: transparent;
+
+}
+.logo{
+    width: 90px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+}
+.navCont {
+    background: rgb(124, 122, 122);
+    /* background: #ffffff; */
+    border-top:#000000 solid 3px ;
+    border-bottom:#000000 solid 3px ;
+    width: 100vw;
+    height: auto;
+    grid-area: nav;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.navList {
+    display: grid;
+    justify-content: center;
+    max-width: 1020px;
+    align-items: center;
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.nav {
+    font-size: 1em;
+    padding: 1rem 1rem;
+    width: auto;
+    list-style: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: normal;
+    color: #000000;
+}
+.nav:hover {
+    font-weight: 900;
+    color: #000000
+}
+#navMenu {
+    display: none;
+}
+.menuWrd {
+    position: absolute;
+    left: 60px;
+    top: 15px;
+    cursor: pointer;
+    color: #000000;
+}
+/* Menu Hamburger */
+
+.menu-wrap {
+    top:86px;
+    left:10px;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    z-index: 100;
+    align-items: center;
+}
+
+.menu-wrap .toggler {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 4;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 35px;
+    height: 50px;
+    /* padding: 1rem; */
+}
+
+.menu-wrap .hamburger > div {
+    background: #000000;
+    border-radius: 5px;
+    width: 100%;
+    height: 4px;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease-in;
+}
+
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+    content: "";
+    background: inherit;
+    top: -10px;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.menu-wrap .hamburger > div::after {
+    top: 10px;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+    z-index: 3;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.menu-wrap .toggler:checked:hover ~ .hamburger > div {
+    transform: rotate(225deg);
+}
+.footer {
+    height: 35px;
+    color: #000;
+    grid-area: footer;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 900;
+    width: 100%;
+    text-decoration: none;
+    backface-visibility: hidden;
+}
+
+/* Home Page */
+#homePage {
+    background: #000000;
+    width: 100%;
+    justify-items: center;
+    height: auto;
+    position: relative;
+    grid-area: pages;
+    align-items: center;
+    display: grid;
+    grid:       [row1start]     "top        top"        1fr    [row1end]
+                [row2start]     "contact    contact"    auto     [row2end]
+                    /           50%        auto
+}
+
+.contactHome {
+    border: 2px solid #000000;
+    background: url(../Images/Buruanga.jpeg) no-repeat center center/cover;
+    width: auto;
+    height: 100%;
+    grid-area: contact;
+    position: relative;
+    word-break: keep-all;
+    padding: 0 2rem;
+}
+
+/* about page */
+#aboutPage {
+    grid-area: pages;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+    background: rgb(78, 77, 77);
+}
+.words {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 2rem;
+    overflow-y: auto;
+}
+.words h1 {
+    top: 0;
+    color: #fff;
+    position: relative;
+    text-align: center;
+}
+.words p{
+    margin-top: 5%;
+    position: relative;
+    color: #fff;
+    font-weight: 900;
+    text-align: justify;
+}
+.words #img1 {
+    width: 35%;
+    margin: 0 1rem 1rem 0;
+    float: left;
+}
+#img2 {
+    width: 40%;
+    margin: 1rem 0 1rem 1rem;
+    float: right;
+}
+#getPage{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-area: pages;
+    overflow-y: auto;
+    display: grid;
+    grid:       [row1start]     "title"     auto     [row1end]
+                [row2start]     "page"      1fr    [row2end]
+                /               auto
+}
+.loc-wrapper {
+    grid-area: page;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    ;
+}
+.location {
+    text-align: justify;
+    line-height: 20px;
+    color: #fff;
+}
+#map {
+    width: 25%;
+    float: left;
+    margin: 0 1rem 1rem 0;
+}
+.getH1 {
+    margin: 2% 0;
+    grid-area: title;
+    font-size: 2rem;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+#airport {
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: absolute;
+}
+.airport {
+    padding: 2rem;
+    width: 100%;
+    height: 55vh;
+    margin-bottom: 10%;
+}
+#contactPage{
+    width: 100%;
+    height: 100vh;
+    grid-area: pages;
+    position: relative;
+    background: url(../Images/forest-light-nature-forest-wallpaper-preview.jpg) center center/cover no-repeat;
+    display: grid;
+    align-items: center;
+    grid:           [row1start]     "title      title"  auto    [row1end]
+                    [row2start]     "mayor      msg"    1fr     [row2end]
+                    [row3start]     "...      mayorName"auto     [row3end]
+                    [row4start]     "footer     footer" auto    [row4end]
+                    /               auto        60%
+}
+.title {
+    padding: 2rem 0;
+    grid-area: title;
+    color: black;
+    position: relative;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 900;
+    top: 5%;
+}
+.mayorCont {
+    grid-area: mayor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+#mayor {
+   height: auto;
+   width: 70%;
+   image-rendering: auto;
+}
+.msgCont {
+    display: flex;
+    justify-content: center;
+    grid-area: msg;
+    width: 90%;
+    height: 50%;
+    position: relative;
+    overflow-y: auto;
+}
+.msg {
+    color: black;
+    font-size: 200%;
+    font-size: auto;
+    font-weight: 900;
+    position: absolute;
+    text-align: center;
+}
+.aboutFooter {
+    bottom: 0;
+    grid-area: footer;
+    border-top: 2px solid #ffffff;
+    width: 100vw;
+    height: 100%;
+    padding: 1rem;
+    position: relative;
+    background: black;
+    display: grid;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    grid:       [row1start] "title  title"       auto    [row1end]
+                [row2start] "email  facebook"    auto    [row2end]
+                [row3start] "phone  icons"       auto    [row3end]
+                /            50%   auto
+}
+.contactTitle{
+    grid-area: title;
+    text-align: center;
+    color: #ffffff;
+}
+.email{
+    grid-area: email;
+    color: #ffffff;
+    font-size: auto;
+    font-weight: 900;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+}
+.phone{
+    grid-area: phone;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+}
+.facebook{
+    grid-area: facebook;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    position: relative;
+    text-align: left;
+}
+.mayorName {
+    grid-area: mayorName;
+    color: #000;
+    position: relative;
+    font-weight: 900;
+    font-size: auto;
+    height: auto;
+    text-align: center;
+    width: 80%;
+    bottom: 100%;
+}
+
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+    #homePage {
+        width: 100%;
+        justify-items: center;
+        height: auto;
+        position: relative;
+        grid-area: pages;
+        display: grid;
+        grid:       [row1start]     "top        top"        auto    [row1end]
+                    [row2start]     "about      about"      auto    [row2end]
+                    [row3start]     "contact    contact"    auto     [row3end]
+                        /           50%        auto
+    }
+    .controls {
+        display: none;
+    }
+} 

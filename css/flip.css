@@ -1,0 +1,352 @@
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+  /* display: none; */
+    background-color: transparent;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    width: 350px;
+    height: 50%;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  /* Position the front and back side */
+  .flip-box-front .flip-box-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  
+  /* Style the back side */
+.flip-box-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #ffffff;
+    border: #000000 solid 2px;
+    color: #000000;
+    transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .flip-box-back {
+      display: flex;
+      top:0;
+      align-items: center;
+      justify-content: center;
+  }
+  .flip-box-back h1 {
+    width: 80%;
+    left: 10%;
+    font-size: 95%;
+  }
+
+  .flip-box-back button {
+      position: absolute;
+      width: auto;
+      color: #000000;
+      height: 10%;
+      text-transform: uppercase;
+      bottom: 20%;
+      font-size: 1em;
+      text-decoration: underline;
+      background: transparent;
+      z-index: 3;
+      box-shadow: 0px 0px 0px transparent;
+      border: 0px solid transparent;
+      text-shadow: 0px 0px 0px transparent;
+  }
+  #TopDestinations {
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    grid-area: pages;
+    display: grid;
+    margin:auto ;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    grid:       [row1start] "a      b       c"      auto     [row1end]
+                [row2start] "d      e       f"      auto     [row2end]
+                [row3start] "g      h       i"      auto     [row3end]
+                /           auto    auto    auto
+}
+#a1 {grid-area: a;}
+#a2 {grid-area: b;}
+#a3 {grid-area: c;}
+#a4 {grid-area: d;}
+#a5 {grid-area: e;}
+#a6 {grid-area: f;}
+#a7 {grid-area: g;}
+#a8 {grid-area: h;}
+#a9 {grid-area: i;}
+
+.tdImagesLI {
+    /* border: solid #000000 3px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.tdImages {
+    position: absolute;
+    /* border: solid 2px #000000; */
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-box, .tdImagesLI {
+    width: 30vw;
+    height: 30vh;
+    z-index: 3;
+}
+.moreBtn {
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+    z-index: 10;
+}
+
+
+/* Slide Show */
+.topHome {
+  width: 100%;
+  grid-area: top;
+  position: relative;
+  justify-content: center;
+  /* display: flex; */
+  align-items: center;
+  margin: auto;
+  padding: 1rem;
+  height: 100%;
+  background: #000000;
+  grid: "slider" 1fr
+        "words" auto
+        /auto;
+}
+.slide-container {
+  width: 70vw;
+  height: auto;
+  margin: auto;
+  padding: 3rem;
+  position: relative;
+}
+.topSlideCont {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+.topSlideImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: solid 4px #ffffff;
+  cursor: grab;
+}
+.topSlideImg:active {
+  cursor: grabbing;
+}
+.slick-prev, .slick-next {
+  position: absolute;
+  text-decoration: none;
+  background: none;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 2rem;
+  border: 4px solid #fcf6f6;
+  padding: 1rem;
+  cursor: pointer;
+}
+.slick-prev:hover, .slick-next:hover{
+  background: #ffffff;
+  color: #000000;
+}
+.slick-prev  {
+  left: 14%;
+}
+.slick-next {
+  right: 14%;
+}
+.slideWrapper {
+  grid-area: slider;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+}
+.slideHead {
+  color: #ffffff;
+  position: relative;
+  top: -50%;
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.aHome {
+  height: auto;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 900;
+  font-size: 18px;
+}
+.slide-words {
+  top: -30px;
+  grid-area: words;
+  width: 60vw;
+  margin: auto;
+  position: relative;
+}
+/* slide 2 */
+.moreSlideCont {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* background: #000000; */
+}
+.moreWrap{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid:     "title1"  15%
+            "slide1"  1fr
+            "page1"  auto
+            /auto
+}
+.moreSlide {
+  grid-area: slide1;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.more1, .more2 {
+  padding: 2rem;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  width: 70%;
+  height: 50vh;
+  display: none;
+  position: relative;
+}
+.moreSL {
+  border: 4px solid #ffffff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.more1:first-child {
+display: block;
+}
+
+.prev1, .next1 {
+  color: #fcf6f6;
+  font-size: 3rem;
+  top: 45%;
+  position: absolute;
+  cursor: pointer;
+  font-weight: 900;
+}
+.next1 {
+  right: 80px;
+}
+.prev1 {
+left: 80px;
+}
+.prev1:hover, .next1:hover{
+  opacity: 0.5;
+}
+
+.tdefCont {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  grid-area: page1;
+}
+.tdDef {
+  border: 3px solid #ffffff;
+  background: rgba(128, 128, 128, 0.534);
+  position: relative;
+  width:100%;
+  height: auto;
+  overflow-y: auto;
+  padding: 2rem;
+  text-align: center;
+  bottom: 0;
+}
+.tdPs {
+  height: 20vh;
+  text-align: justify;
+  position: relative;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: large;
+  line-height: 30px;
+}
+.tdDefHeadings {
+  grid-area: title1;
+  position: relative;
+  width: 100%;
+  /* background: #000000; */
+  height: auto;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;
+  top: 55%;
+}
+#moreClose {
+  top: 40px;
+  background: #ffffff;
+  right: 40px;
+  position: absolute;
+  font-size: 2rem;
+  width: 50px;
+}
+#moreClose:hover{
+  background: #838080;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+  .top-wrapper {max-width: 98%;}
+  .label-wrapper {display: none;}
+  .slick-prev, .slick-next {display: none;}
+  .slide-container{width: 100vw;}
+  .topSlideCont{height: 100%;}
+  .slideHead {margin-top: 5%;}
+} 
