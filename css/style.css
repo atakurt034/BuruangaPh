@@ -14,13 +14,13 @@
     background: url(../Images/HomeBackground.jpg) no-repeat bottom center/cover;
     height: 100%;
     width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+    position: absolute;
     animation: wlcmslide 20s linear infinite 0s;
     animation-timing-function: ease-in-out;
+    justify-content: center;
+    align-content: center !important;
+    flex-wrap: wrap !important;
+    display: flex !important;
 }
 @keyframes wlcmslide {
     20% {background: url(../Images/HomeBackground.jpg) no-repeat bottom center/cover;}
