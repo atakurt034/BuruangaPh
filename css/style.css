@@ -14,7 +14,7 @@
     background: url(../Images/HomeBackground.jpg) no-repeat bottom center/cover;
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -22,7 +22,6 @@
     animation: wlcmslide 20s linear infinite 0s;
     animation-timing-function: ease-in-out;
 }
-
 @keyframes wlcmslide {
     20% {background: url(../Images/HomeBackground.jpg) no-repeat bottom center/cover;}
     40% {background: url(../Images/186741-Ariels-Point.jpg) no-repeat bottom center/cover;}
@@ -99,7 +98,6 @@
 }
 .explore:hover {
     background: #000;
-    /* border: #ffffff solid 5px; */
 }
 .button {
     padding: 2rem 0;
@@ -137,9 +135,7 @@
     height: auto;
     grid-area:logo;
     width: 100%;
-    /* background:rgb(15, 37, 9); */
     background: transparent;
-
 }
 .logo{
     width: 90px;
